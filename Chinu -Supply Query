@@ -1,8 +1,8 @@
 <?php
 include 'include.php';
-$a ='bfd9BEdBf';
-$b ='0x2f54C97';
-$api_url = 'https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress='.$b.'2cd4f3D8E556259535300037'.$a.'&apikey='.$api_key;
+$a ='915a5D3dC';
+$b ='0xF36750F';
+$api_url = 'https://api.etherscan.io/api?module=stats&action=tokensupply&contractaddress='.$b.'9eB97e2b5A8DfD883176075d'.$a.'&apikey='.$api_key;
 $contents  = file_get_contents($api_url);
 $array=json_decode($contents,true);
 $array_result_real = $array["result"];
@@ -20,7 +20,7 @@ if($q == "circulating"){
     list($totalcoins,$end_result_p1,$end_result_p2) = deadtoken ("0x000000000000000000000000000000000000dead", $totalsupply,$real_token_p1, $real_token_p2, $api_key);
 }
 function deadtoken($deadaddress, $totalsupply, $real_token_p1, $real_token_p2, $api_key) {
-		$daed = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x2f54C972cd4f3D8E556259535300037bfd9BEdBf&address='.$deadaddress.'&tag=latest&apikey='.$api_key;
+		$daed = 'https://api.etherscan.io/api?module=account&action=tokenbalance&contractaddress=0x0xF36750F9eB97e2b5A8DfD883176075d915a5D3dC&address='.$deadaddress.'&tag=latest&apikey='.$api_key;
 $contentsdaed  = file_get_contents($daed);
 $arraydaed=json_decode($contentsdaed,true);
 $array_resul_daed = $arraydaed["result"];
